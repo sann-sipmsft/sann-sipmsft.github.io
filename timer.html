@@ -4,16 +4,29 @@
   <style>
     #timerstyle
     {
-      font-size: 300%;
-      font-family: inherit;
+      font-size: 150%;
+      font-family: monospace;
+    }
+    #background
+    {
+      background: blue;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      padding: 20%;
+      text-align: center;
+      margin: 0 auto;
     }
   </style>
 </head>
 
 <body>
- <div id=timerstyle>
-  <center><span id="timer">WORK ZONE<span></center>
- </div>
+  <div id=timerstyle>
+    <center><span id="timer">WORK ZONE<span></center>
+  </div>
+  <div id=background>
+    <center><span id = "timerformat" style="font-size:150%;font-family:monospace;color:white;"> </span></center>
+  </div>
 
  <FORM>
  <center><INPUT TYPE="button" onClick="history.go(0)" VALUE="Restart"></center>

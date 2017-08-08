@@ -7,7 +7,19 @@ window.onload = function()
   {
     if (hou == 00 && sec == 00)
     {
-      document.getElementById("timer").innerHTML = "Congratulations! You have worked for " + input + "minutes. Keep it up! Take a short break and come back for another focus session!"
+      // minute or minutes,based on the original input
+      if (input == "1")
+      {
+        var min = " minute."
+      }
+      else
+      {
+        var min = " minutes."
+      }
+
+      //output after timer is done
+      document.getElementById("timer").innerHTML = "Congratulations! You have worked for " + input + min + "\nKeep it up! Take a short break and come back for another focus session!"
+      document.getElementById("timerformat").innerHTML = "";
     }
     else
     {
@@ -26,9 +38,11 @@ window.onload = function()
       }
 
       //variable to hold display for seconds
-      var sec_display = (sec).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false}) + " seconds."
+      var sec_display = sec + " seconds"
 
-      document.getElementById("timer").innerHTML = "Try to stay on task for " + min_display + sec_display;
+      // output/ countdown on screen
+      document.getElementById("timer").innerHTML = "TRY TO STAY ON TASK FOR";
+      document.getElementById("timerformat").innerHTML = min_display + sec_display;
       sec--;
 
       if (sec == -1)
