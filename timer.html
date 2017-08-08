@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #timerstyle
+    {
+      font-size: 300%;
+      font-family: fantasy;
+    }
+  </style>
+</head>
+
+<body>
+ <div id=timerstyle>
+  <center>Stay on track for <span id="timer">00:00<span> minutes!</center>
+ </div>
+
+ <script>
+window.onload = function(){
+  var input = prompt("How many minutes would you like to focus for? ")
+  var hou = parseInt(input) - 1;
+  var sec = 59;
+  setInterval(function(){
+
+  document.getElementById("timer").innerHTML =
+  (hou).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false}) +" : " +
+  (sec).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false}) + " minutes" ;
+    sec--;
+    (sec).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+    if(sec == -1)
+    {
+      hou--;
+      sec = 59;
+    }
+    if (hou == 0 && sec ==0)
+    {
+      const hou = 0;
+      const sec = 0;
+    }
+  },1000);
+ }
+ </script>
+</body>
+
+</html>
