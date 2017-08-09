@@ -25,13 +25,22 @@
   </div>
 
   <FORM>
-  <center><INPUT TYPE="button" onClick="startTimer()" VALUE="START A NEW STUDY SESSION"></center>
+  <center><INPUT id="starter" TYPE="button" onClick="startTimer()" VALUE="START A NEW STUDY SESSION"></center>
+  </FORM>
+
+  <FORM>
+  <center><INPUT id="pauser" TYPE="button" onClick="if(!event.detail || event.detail == 1);pauseTimer()" VALUE="STOP"></center>
+  </FORM>
+
+  <FORM>
+  <center><INPUT id="restarter" TYPE="button" onClick="restartTimer()" VALUE="RESTART"></center>
   </FORM>
 
   <br>
   <div id=background>
     <center><span id = "timerformat" style="font-size:150%;font-family:monospace;color:white;margin:auto;position:absolute;top:50%;right:0;left:0;"> <span></center>
   </div>
+
 </body>
 
 <script src="timer.js"></script>
