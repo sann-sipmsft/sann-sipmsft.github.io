@@ -9,28 +9,29 @@
     }
     #background
     {
-      background: blue;
+      background: rgb(78,101, 178);
       width: 50px;
       height: 50px;
       border-radius: 50%;
       padding: 20%;
-      text-align: center;
       margin: 0 auto;
     }
   </style>
 </head>
 
-<body>
+<body style="background-color:rgb(194,194,214)">
   <div id=timerstyle>
-    <center><span id="timer">WORK ZONE<span></center>
-  </div>
-  <div id=background>
-    <center><span id = "timerformat" style="font-size:150%;font-family:monospace;color:white;"> </span></center>
+    <center><span id="timer">WORK ZONE<br><br></span></center>
   </div>
 
- <FORM>
- <center><INPUT TYPE="button" onClick="history.go(0)" VALUE="Restart"></center>
- </FORM>
+  <FORM>
+  <center><INPUT TYPE="button" onClick="startTimer()" VALUE="START A NEW STUDY SESSION"></center>
+  </FORM>
+
+  <br>
+  <div id=background>
+    <center><span id = "timerformat" style="font-size:150%;font-family:monospace;color:white;margin:auto;position:absolute;top:50%;right:0;left:0;"> <span></center>
+  </div>
 </body>
 
 <script src="timer.js"></script>
