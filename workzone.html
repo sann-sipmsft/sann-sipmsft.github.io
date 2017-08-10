@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>todolist</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="final_niki_todolist.css">
+  <link rel="stylesheet" type="text/css" href="timer.css">
+  <link rel="stylesheet" type="text/css" href="tabs.css">
+  <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<div class="jumbotron" style=background-color:#C2C2D6>
+  <h1 style="text-align:center;font-family:Abel;font-size:360%;color:Ivory;border:1px solid #101935;padding:15px;margin-right:475px;margin-left:475px;"><b>WORK ZONE</b></h1>
+  <p style="text-align: center;">
+    <a href="https://sann-sipmsft.github.io/">&#x26EB;</a>
+
+    <a href="https://sann-sipmsft.github.io#workmode/">&#x270E;</a>
+
+    <a href="https://sann-sipmsft.github.io#music/">&#x266B;</a>
+
+    <a href="https://sann-sipmsft.github.io#resources/">&#x2611;</a>
+  </p>
+</div>
+
+<div class="row" style="background-color:rgb(194,194,214)">
+    <div class="col-sm-9 col-md-6 col-lg-8" >
+      <div id=timerstyle class="header">
+        <center><span id="timer">TRY TO STAY FOCUSED FOR <br></span></center>
+      </div>
+
+      <center>
+        <div class="btn-group">
+          <button type="button" class="btn btn-danger" onClick="pauseTimer()">STOP</button>
+          <button type="button" class="btn btn-info" onClick="restartTimer()">RESTART</button>
+        </div>
+      </center>
+
+      <br>
+      <div id=background>
+        <center><span id = "timerformat" style="font-size:250%;font-family:monospace;color:rgb(194,194,214);margin:auto;position:absolute;top:300px;right:0;left:0;"> <span></center>
+      </div>
+
+      <script type="text/javascript" src="timer.js"></script>
+
+    </div>
+    <div class="col-sm-3 col-md-6 col-lg-4">
+
+    <body style="background-color:#C2C2D6">
+
+      <div id="myDIV" class="header">
+        <h2 style="margin:5px;font-family:monospace;font-size:300%;">MY TO-DO LIST</h2>
+        <input type="text" id="myInput" placeholder="What do you have to complete?">
+        <span onclick="newElement()" class="addBtn">Add</span>
+      </div>
+
+      <ul id="myUL">
+
+      </ul>
+
+      <script type="text/javascript" src="final_niki_todolist.js"></script>
+
+    </div>
+</div>
+
+</body>
+</html>

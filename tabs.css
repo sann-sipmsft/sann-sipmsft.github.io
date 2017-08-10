@@ -1,0 +1,36 @@
+a:link {
+    color: Ivory;
+    background-color: transparent;
+    text-decoration: none;
+    font-size: 80px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+}
+a:visited {
+    color: Ivory;
+    background-color: transparent;
+    text-decoration: none;
+    font-size: 80px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+}
+a:hover {
+    color: Gold;
+    background-color: transparent;
+    text-decoration: none;
+    font-size: 80px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+}
+a:active {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+    font-size: 80px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+}

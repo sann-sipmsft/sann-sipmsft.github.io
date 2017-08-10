@@ -35,7 +35,7 @@ function startTimer()
         //output after timer is done
       document.getElementById("timer").innerHTML = "TAKE A SHORT BREAK AND COME BACK FOR ANOTHER SESSION!<br>"
       document.getElementById("timerformat").innerHTML = "GOOD JOB! <br> YOU HAVE WORKED FOR " + input + min + "<br><br>KEEP IT UP!";
-      document.getElementById("timer").style.fontSize = "50%";
+      document.getElementById("timer").style.fontSize = "65%";
       document.getElementById("timerformat").style.top = "43%";
       document.getElementById("timerformat").style.fontSize = "200%";
       clearInterval(interval1);
@@ -95,10 +95,9 @@ function startTimer()
       //variable to hold display for seconds
       var sec_display = sec + " seconds";
 
-        // output/ countdown on screen
+      // output/ countdown on screen
       document.getElementById("timer").innerHTML = "TRY TO STAY ON TASK FOR<br>";
       document.getElementById("timerformat").innerHTML = min_display + sec_display;
-      document.getElementById("restarter").value = "RESTART";
       sec--;
     }
   },intervaltimer);
