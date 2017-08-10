@@ -1,35 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <style>
-    #timerstyle
-    {
-      font-size: 150%;
-      font-family: monospace;
-    }
-    #background
-    {
-      background: rgb(78,101, 178);
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      padding: 20%;
-      margin: 0 auto;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="timer.css">
 </head>
 
 <body style="background-color:rgb(194,194,214)">
   <div id=timerstyle>
-    <center><span id="timer">WORK ZONE<br><br></span></center>
+    <center style="font-size:200%"><span id="timer">WORK ZONE<br></span></center>
   </div>
 
   <FORM>
-  <center><INPUT id="starter" TYPE="button" onClick="startTimer()" VALUE="START A NEW STUDY SESSION"></center>
-  </FORM>
-
-  <FORM>
-  <center><INPUT id="pauser" TYPE="button" onClick="if(!event.detail || event.detail == 1);pauseTimer()" VALUE="STOP"></center>
+  <center><INPUT id="pauser" TYPE="button" onClick="pauseTimer()" VALUE="STOP"></center>
   </FORM>
 
   <FORM>
@@ -38,7 +19,7 @@
 
   <br>
   <div id=background>
-    <center><span id = "timerformat" style="font-size:150%;font-family:monospace;color:white;margin:auto;position:absolute;top:50%;right:0;left:0;"> <span></center>
+    <center><span id = "timerformat" style="font-size:250%;font-family:monospace;color:rgb(194,194,214);margin:auto;position:absolute;top:50%;right:0;left:0;"> <span></center>
   </div>
 
 </body>
