@@ -8,8 +8,9 @@ function startTimer()
   document.getElementById("timer").style.fontSize = "100%";
 
   // declare variables for number of minutes and seconds
-  var input = prompt("How many minutes would you like to focus for? ");
+  var input = prompt("How many minutes would you like to focus for? \nPlease enter a positive integer value.");
   var hou = parseInt(input) - 1;
+  var decimalchecker = parseInt(input) % 1
   var sec = 59;
   var intervaltimer = 1000;
 
@@ -18,6 +19,11 @@ function startTimer()
     if (isNaN(parseInt(input)) == true)
     {
       alert("Please enter a numeric value.");
+      location.reload();
+    }
+    else if (hou < 0)
+    {
+      alert("Please enter a positive integer.")
       location.reload();
     }
     else if (hou == 00 && sec == 00)
@@ -35,7 +41,7 @@ function startTimer()
         //output after timer is done
       document.getElementById("timer").innerHTML = "TAKE A SHORT BREAK AND COME BACK FOR ANOTHER SESSION!<br>"
       document.getElementById("timerformat").innerHTML = "GOOD JOB! <br> YOU HAVE WORKED FOR " + input + min + "<br><br>KEEP IT UP!";
-      document.getElementById("timer").style.fontSize = "50%";
+      document.getElementById("timer").style.fontSize = "65%";
       document.getElementById("timerformat").style.top = "43%";
       document.getElementById("timerformat").style.fontSize = "200%";
       clearInterval(interval1);
@@ -86,19 +92,18 @@ function startTimer()
       }
       else if (hou == 1)
       {
-        var min_display = hou + " minute and ";
+        var min_display = hou + " minute";
       }
       else
       {
-        var min_display = hou + " minutes and ";
+        var min_display = hou + " minutes";
       }
       //variable to hold display for seconds
       var sec_display = sec + " seconds";
 
-        // output/ countdown on screen
+      // output/ countdown on screen
       document.getElementById("timer").innerHTML = "TRY TO STAY ON TASK FOR<br>";
-      document.getElementById("timerformat").innerHTML = min_display + sec_display;
-      document.getElementById("restarter").value = "RESTART";
+      document.getElementById("timerformat").innerHTML = min_display + "<br>" + sec_display;
       sec--;
     }
   },intervaltimer);
