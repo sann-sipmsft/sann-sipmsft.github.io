@@ -1,5 +1,3 @@
-window.onload = startTimer()
-
 function startTimer()
 {
   // reset all IDs for restarters
@@ -8,9 +6,9 @@ function startTimer()
   document.getElementById("timer").style.fontSize = "100%";
 
   // declare variables for number of minutes and seconds
-  var input = prompt("How many minutes would you like to focus for? \nPlease enter a positive integer value.");
+  var input = document.getElementById('lolz').value;
   var hou = parseInt(input) - 1;
-  var decimalchecker = parseInt(input) % 1
+  var decimalchecker = parseInt(input) % 1;
   var sec = 59;
   var intervaltimer = 1000;
 
@@ -18,13 +16,18 @@ function startTimer()
   {
     if (isNaN(parseInt(input)) == true)
     {
-      alert("Please enter a numeric value.");
-      location.reload();
+      document.getElementById("alerts").innerHTML = "Please enter a numeric value.";
+      clearInterval(interval1);
     }
     else if (hou < 0)
     {
-      alert("Please enter a positive integer.")
-      location.reload();
+      document.getElementById("alerts").innerHTML = "Please enter a positive integer.";
+      clearInterval(interval1);
+    }
+    else if (parseInt(input) >= 60)
+    {
+      document.getElementById("alerts").innerHTML ="Studying for too long without taking any breaks will cause your brain to become fatigued. Remember that your brain needs some rest too!";
+      clearInterval(interval1);
     }
     else if (hou == 00 && sec == 00)
     {
@@ -103,8 +106,17 @@ function startTimer()
 
       // output/ countdown on screen
       document.getElementById("timer").innerHTML = "TRY TO STAY ON TASK FOR<br>";
-      document.getElementById("timerformat").innerHTML = min_display + "<br>" + sec_display;
+      document.getElementById("timerformat").innerHTML = "<br><br>" + min_display + "<br>" + sec_display;
       sec--;
+
+      if (hou != 0 && sec !=0)
+      {
+      	document.getElementById("starter").disabled = true;
+      }
+      else
+      {
+	document.getElementById("starter").disabled = false;
+      }
     }
   },intervaltimer);
 }
@@ -119,5 +131,5 @@ function pauseTimer()
 function restartTimer()
 {
   clearInterval(interval1);
-  startTimer();
+  location.reload();
 }
