@@ -1,4 +1,4 @@
-function startTimer()
+function startTimer(minutes)
 {
   // reset all IDs for restarters
   document.getElementById("timerformat").style.fontSize = "250%";
@@ -6,33 +6,33 @@ function startTimer()
   document.getElementById("timer").style.fontSize = "100%";
 
   // declare variables for number of minutes and seconds
-  var input = document.getElementById('lolz').value;
-  var hou = parseInt(input) - 1;
-  var decimalchecker = parseInt(input) % 1;
+  var input = minutes
+  var hou = parseInt(minutes) - 1;
+  var decimalchecker = parseInt(minutes) % 1;
   var sec = 59;
   var intervaltimer = 1000;
 
   interval1 = setInterval(function()
   {
-    if (isNaN(parseInt(input)) == true)
+    if (isNaN(parseInt(minutes)) == true)
     {
-      document.getElementById("alerts").innerHTML = "Please enter a numeric value.";
+      document.getElementById("alerts").innerHTML = "PLEASE ENTER A NUMERIC VALUE.";
       clearInterval(interval1);
     }
     else if (hou < 0)
     {
-      document.getElementById("alerts").innerHTML = "Please enter a positive integer.";
+      document.getElementById("alerts").innerHTML = "PLEASE ENTER A POSITIVE INTEGER.";
       clearInterval(interval1);
     }
-    else if (parseInt(input) >= 60)
+    else if (parseInt(minutes) >= 60)
     {
-      document.getElementById("alerts").innerHTML ="Studying for too long without taking any breaks will cause your brain to become fatigued. Remember that your brain needs some rest too!";
+      document.getElementById("alerts").innerHTML ="STUDYING FOR TOO LONG WITHOUT TAKING ANY BREAKS WILL CAUSE YOU BRAIN TO BECOME FATIGUED. REMEMBER THAT YOUR BRAIN NEEDS SOME REST TOO!";
       clearInterval(interval1);
     }
     else if (hou == 00 && sec == 00)
     {
       // minute or minutes,based on the original input
-      if (input == "1")
+      if (minutes == "1")
       {
         var min = " MINUTE.";
       }
@@ -43,7 +43,7 @@ function startTimer()
 
         //output after timer is done
       document.getElementById("timer").innerHTML = "TAKE A SHORT BREAK AND COME BACK FOR ANOTHER SESSION!<br>"
-      document.getElementById("timerformat").innerHTML = "GOOD JOB! <br> YOU HAVE WORKED FOR " + input + min + "<br><br>KEEP IT UP!";
+      document.getElementById("timerformat").innerHTML = "<br><br>GOOD JOB! <br> YOU HAVE WORKED FOR " + minutes + min + "<br><br>KEEP IT UP!";
       document.getElementById("timer").style.fontSize = "65%";
       document.getElementById("timerformat").style.top = "43%";
       document.getElementById("timerformat").style.fontSize = "200%";
@@ -95,14 +95,21 @@ function startTimer()
       }
       else if (hou == 1)
       {
-        var min_display = hou + " minute";
+        var min_display = hou + " MINUTE";
       }
       else
       {
-        var min_display = hou + " minutes";
+        var min_display = hou + " MINUTES";
       }
       //variable to hold display for seconds
-      var sec_display = sec + " seconds";
+      if (sec ==1)
+      {
+        var sec_display = " SECOND"
+      }
+      else
+      {
+        var sec_display = sec + " SECONDS";
+      }
 
       // output/ countdown on screen
       document.getElementById("timer").innerHTML = "TRY TO STAY ON TASK FOR<br>";
@@ -112,13 +119,23 @@ function startTimer()
       if (hou != 0 && sec !=0)
       {
       	document.getElementById("starter").disabled = true;
+        document.getElementById("breaker").disabled = true;
+        document.getElementById("lolz").disabled = true;
       }
       else
       {
-	document.getElementById("starter").disabled = false;
+	       document.getElementById("starter").disabled = false;
+         document.getElementById("breaker").disabled = false;
+         document.getElementById("lolz").disabled = false;
       }
     }
   },intervaltimer);
+}
+
+function startRealTimer()
+{
+  var input = document.getElementById('lolz').value;
+  startTimer(input);
 }
 
 function pauseTimer()
@@ -132,4 +149,114 @@ function restartTimer()
 {
   clearInterval(interval1);
   location.reload();
+}
+
+function breakTimer()
+{
+  document.getElementById("timerformat").style.fontSize = "250%";
+  document.getElementById("timerformat").style.top = "50%";
+  document.getElementById("timer").style.fontSize = "100%";
+
+  // declare variables for number of minutes and seconds
+  var hou = 7;
+  var sec = 59;
+  var intervaltimer = 1000;
+
+  interval1 = setInterval(function()
+    {
+      if (hou == 00 && sec == 00)
+      {
+        // minute or minutes,based on the original input
+        if (hou == "1")
+        {
+          var min = " MINUTE.";
+        }
+        else
+        {
+          var min = " MINUTES.";
+        }
+          //output after timer is done
+        document.getElementById("timer").innerHTML = "YOUR SHORT BREAK IS OVER.<br>"
+        document.getElementById("timerformat").innerHTML = "<br><br>START ANOTHER FOCUS SESSION BY RESTARTING THE TIMER.";
+        document.getElementById("timer").style.fontSize = "65%";
+        document.getElementById("timerformat").style.top = "43%";
+        document.getElementById("timerformat").style.fontSize = "200%";
+        clearInterval(interval1);
+      }
+      else
+      {
+        // changes color of circle as timer nears 00:00
+        if (hou < 1)
+        {
+          document.getElementById("background").style.background = "rgb(156, 255, 176)";
+          document.getElementById("timerformat").style.color = "black";
+        }
+        else if (hou < 2)
+        {
+          document.getElementById("background").style.background = "rgb(115,255,176)";
+          document.getElementById("timerformat").style.color = "black";
+        }
+        else if (hou < 3)
+        {
+          document.getElementById("background").style.background = "rgb(181, 255, 213)";
+          document.getElementById("timerformat").style.color = "black";
+        }
+        else if (hou < 5)
+        {
+          document.getElementById("background").style.background = "rgb(200, 232, 229)";
+          document.getElementById("timerformat").style.color = "black";
+        }
+        else
+        {
+          document.getElementById("background").style.background = "rgb(123, 163, 215)";
+          document.getElementById("timerformat").style.color = "black";
+        }
+
+        if (sec == -1)
+        {
+          hou--;
+          sec = 59;
+        }
+          // if statement for declaration of variable for
+        if (hou == 0)
+        {
+          var min_display = " ";
+        }
+        else if (hou == 1)
+        {
+          var min_display = hou + " MINUTE";
+        }
+        else
+        {
+          var min_display = hou + " MINUTES";
+        }
+        //variable to hold display for seconds
+        if (sec ==1)
+        {
+          var sec_display = sec + " SECOND"
+        }
+        else
+        {
+          var sec_display = sec + " SECONDS";
+        }
+
+        // output/ countdown on screen
+        document.getElementById("timer").innerHTML = "SHORT BREAK<br>";
+        document.getElementById("timerformat").innerHTML = "<br><br>" + min_display + "<br>" + sec_display;
+        sec--;
+
+        if (hou != 0 && sec !=0)
+        {
+        	document.getElementById("starter").disabled = true;
+          document.getElementById("breaker").disabled = true;
+          document.getElementById("lolz").disabled = true;
+        }
+        else
+        {
+  	       document.getElementById("starter").disabled = false;
+           document.getElementById("breaker").disabled = false;
+           document.getElementById("lolz").disabled = false;
+        }
+      }
+    },intervaltimer);
 }

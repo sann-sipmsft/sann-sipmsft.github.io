@@ -43,13 +43,16 @@
         <div class="btn-group">
           <button type="button" class="btn btn-danger" onClick="pauseTimer()">STOP</button>
           <button type="button" class="btn btn-info" onClick="restartTimer()">RESTART</button>
+          <button type="button" class="btn btn-warning" onClick="breakTimer()" id="breaker">SHORT BREAK</button>
         </div>
-	      <div>
-		        <input type="text" name="enter" class="enter" value="" placeholder="HOW MANY MINUTES WOULD YOU LIKE TO FOCUS FOR?" id="lolz" size="50"
-		          maxlength="2"/>
-		        <input type="button" value="GO!" OnClick="startTimer()" id="starter"/>
-		        <p id="alerts" style="color:black;font-family:Abel;font-size:100%;"> </p>
+      </center>
+      <center>
+	      <div style="text-align:center;">
+		        <input type="text" name="enter" class="enter" value="" placeholder="HOW MANY MINUTES WOULD YOU LIKE TO FOCUS FOR?" id="lolz" size="30"
+		          maxlength="2" style="text-align:center;"/>
+		        <input type="button" value="GO!" OnClick="startRealTimer()" id="starter"/>
 	      </div>
+        <p id="alerts" style="color:black;font-family:Abel;font-size:100%;"> </p>
       </center>
 
       <br><br><br><br><br><br>
@@ -66,6 +69,7 @@
 
       <div id="myDIV" class="header">
         <h2 style="margin:5px;font-family:Abel;font-size:300%;">TO-DO LIST</h2>
+        <p style="font-family:Abel">TASKS WILL NOT BE SAVED IF YOU LEAVE THIS PAGE</p>
         <input type="text" id="myInput" placeholder="WHAT WOULD YOU LIKE TO COMPLETE?" size="60">
         <span onclick="newElement()" class="addBtn">Add</span>
       </div>
