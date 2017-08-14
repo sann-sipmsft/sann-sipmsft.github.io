@@ -2,12 +2,24 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="timer.css">
+  <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 
 <body style="background-color:rgb(194,194,214)">
+
+  <script src="timer.js"></script>
+
   <div id=timerstyle>
     <center style="font-size:200%"><span id="timer">WORK ZONE<br></span></center>
   </div>
+
+  <center>
+    <div class="input-group" style="font-family:Abel;font-size:200%;text-align:center;">
+      <input type="text" name="enter" class="enter" id="minutes"/>
+      <input type="button" value="GO!" OnClick="startTimer();"/>
+    </div>
+  </center>
 
   <FORM>
   <center><INPUT id="pauser" TYPE="button" onClick="pauseTimer()" VALUE="STOP"></center>
@@ -23,8 +35,5 @@
   </div>
 
 </body>
-
-<script src="timer.js"></script>
-
 
 </html>

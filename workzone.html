@@ -36,7 +36,7 @@
 <div class="row" style="background-color:rgb(194,194,214);font-family:Abel;">
     <div class="col-sm-9 col-md-6 col-lg-8" >
       <div id=timerstyle class="header" style="font-family:Abel;">
-        <center><span id="timer">TRY TO STAY FOCUSED FOR <br></span></center>
+        <center><span id="timer">TRY TO STAY ON TASK FOR <br></span></center>
       </div>
 
       <center>
@@ -44,9 +44,15 @@
           <button type="button" class="btn btn-danger" onClick="pauseTimer()">STOP</button>
           <button type="button" class="btn btn-info" onClick="restartTimer()">RESTART</button>
         </div>
+	      <div>
+		        <input type="text" name="enter" class="enter" value="" placeholder="HOW MANY MINUTES WOULD YOU LIKE TO FOCUS FOR?" id="lolz" size="50"
+		          maxlength="2"/>
+		        <input type="button" value="GO!" OnClick="startTimer()" id="starter"/>
+		        <p id="alerts" style="color:black;font-family:Abel;font-size:100%;"> </p>
+	      </div>
       </center>
 
-      <br>
+      <br><br><br><br><br><br>
       <div id=background>
         <center><span id = "timerformat" style="font-size:250%;font-family:Abel;color:rgb(194,194,214);margin:auto;position:absolute;top:300px;right:0;left:0;"> <span></center>
       </div>
@@ -60,7 +66,7 @@
 
       <div id="myDIV" class="header">
         <h2 style="margin:5px;font-family:Abel;font-size:300%;">TO-DO LIST</h2>
-        <input type="text" id="myInput" placeholder="What do you have to complete?">
+        <input type="text" id="myInput" placeholder="WHAT WOULD YOU LIKE TO COMPLETE?" size="60">
         <span onclick="newElement()" class="addBtn">Add</span>
       </div>
 
