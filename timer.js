@@ -44,7 +44,7 @@ function startTimer(minutes)
 
         //output after timer is done
       document.getElementById("timer").innerHTML = "TAKE A SHORT BREAK AND COME BACK FOR ANOTHER SESSION!<br>"
-      document.getElementById("timerformat").innerHTML = "<br><br>GOOD JOB! <br> YOU HAVE WORKED FOR " + minutes + min + "<br><br>KEEP IT UP!";
+      document.getElementById("timerformat").innerHTML = "GOOD JOB! <br> YOU HAVE WORKED FOR " + minutes + min + "<br><br>KEEP IT UP!";
       document.getElementById("timer").style.fontSize = "65%";
       document.getElementById("timerformat").style.top = "43%";
       document.getElementById("timerformat").style.fontSize = "200%";
@@ -114,8 +114,8 @@ function startTimer(minutes)
       }
 
       // output/ countdown on screen
-      document.getElementById("timer").innerHTML = "TRY TO STAY ON TASK FOR<br>";
-      document.getElementById("timerformat").innerHTML = "<br><br>" + min_display + "<br>" + sec_display;
+      document.getElementById("timer").innerHTML = "TRY TO STAY ON TASK FOR...<br>";
+      document.getElementById("timerformat").innerHTML = min_display + "<br>" + sec_display;
       sec--;
 
       if (hou != 0 && sec !=0)
@@ -180,7 +180,7 @@ function breakTimer()
         }
           //output after timer is done
         document.getElementById("timer").innerHTML = "YOUR SHORT BREAK IS OVER.<br>"
-        document.getElementById("timerformat").innerHTML = "<br><br>START ANOTHER FOCUS SESSION BY RESTARTING THE TIMER.";
+        document.getElementById("timerformat").innerHTML = "START ANOTHER FOCUS SESSION BY RESTARTING THE TIMER.";
         document.getElementById("timer").style.fontSize = "65%";
         document.getElementById("timerformat").style.top = "43%";
         document.getElementById("timerformat").style.fontSize = "200%";
@@ -246,7 +246,7 @@ function breakTimer()
 
         // output/ countdown on screen
         document.getElementById("timer").innerHTML = "SHORT BREAK<br>";
-        document.getElementById("timerformat").innerHTML = "<br><br>" + min_display + "<br>" + sec_display;
+        document.getElementById("timerformat").innerHTML = min_display + "<br>" + sec_display;
         sec--;
 
         if (hou != 0 && sec !=0)
