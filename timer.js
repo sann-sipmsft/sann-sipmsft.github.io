@@ -11,6 +11,7 @@ function startTimer(minutes)
   var decimalchecker = parseInt(minutes) % 1;
   var sec = 59;
   var intervaltimer = 1000;
+  var applause = new Audio("applause.mp3");
 
   interval1 = setInterval(function()
   {
@@ -47,6 +48,7 @@ function startTimer(minutes)
       document.getElementById("timer").style.fontSize = "65%";
       document.getElementById("timerformat").style.top = "43%";
       document.getElementById("timerformat").style.fontSize = "200%";
+      playAudio(applause);
       clearInterval(interval1);
     }
     else
@@ -104,7 +106,7 @@ function startTimer(minutes)
       //variable to hold display for seconds
       if (sec ==1)
       {
-        var sec_display = " SECOND"
+        var sec_display = sec + " SECOND"
       }
       else
       {
@@ -259,4 +261,10 @@ function breakTimer()
         }
       }
     },intervaltimer);
+}
+
+function playAudio(audio)
+{
+  audio.play();
+  setTimeout(function(){ audio.pause() }, 5000);
 }
