@@ -123,12 +123,15 @@ function startTimer(minutes)
       	document.getElementById("starter").disabled = true;
         document.getElementById("breaker").disabled = true;
         document.getElementById("lolz").disabled = true;
+        document.getElementById("komodoro").disabled = true;
+
       }
       else
       {
 	       document.getElementById("starter").disabled = false;
          document.getElementById("breaker").disabled = false;
          document.getElementById("lolz").disabled = false;
+         document.getElementById("komodoro").disabled = false;
       }
     }
   },intervaltimer);
@@ -153,6 +156,10 @@ function restartTimer()
   location.reload();
 }
 
+function komodoro()
+{
+  startTimer("25");
+}
 function breakTimer()
 {
   document.getElementById("timerformat").style.fontSize = "250%";
@@ -254,12 +261,14 @@ function breakTimer()
         	document.getElementById("starter").disabled = true;
           document.getElementById("breaker").disabled = true;
           document.getElementById("lolz").disabled = true;
+          document.getElementById("komodoro").disabled = true;
         }
         else
         {
   	       document.getElementById("starter").disabled = false;
            document.getElementById("breaker").disabled = false;
            document.getElementById("lolz").disabled = false;
+           document.getElementById("komodoro").disabled = false;
         }
       }
     },intervaltimer);
