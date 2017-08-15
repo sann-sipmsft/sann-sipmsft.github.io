@@ -11,6 +11,7 @@ function startTimer(minutes)
   var decimalchecker = parseInt(minutes) % 1;
   var sec = 59;
   var intervaltimer = 1000;
+  var applause = new Audio("applause.mp3");
 
   interval1 = setInterval(function()
   {
@@ -43,10 +44,11 @@ function startTimer(minutes)
 
         //output after timer is done
       document.getElementById("timer").innerHTML = "TAKE A SHORT BREAK AND COME BACK FOR ANOTHER SESSION!<br>"
-      document.getElementById("timerformat").innerHTML = "<br><br>GOOD JOB! <br> YOU HAVE WORKED FOR " + minutes + min + "<br><br>KEEP IT UP!";
+      document.getElementById("timerformat").innerHTML = "GOOD JOB! <br> YOU HAVE WORKED FOR " + minutes + min + "<br><br>KEEP IT UP!";
       document.getElementById("timer").style.fontSize = "65%";
       document.getElementById("timerformat").style.top = "43%";
       document.getElementById("timerformat").style.fontSize = "200%";
+      playAudio(applause);
       clearInterval(interval1);
     }
     else
@@ -104,7 +106,7 @@ function startTimer(minutes)
       //variable to hold display for seconds
       if (sec ==1)
       {
-        var sec_display = " SECOND"
+        var sec_display = sec + " SECOND"
       }
       else
       {
@@ -112,8 +114,8 @@ function startTimer(minutes)
       }
 
       // output/ countdown on screen
-      document.getElementById("timer").innerHTML = "TRY TO STAY ON TASK FOR<br>";
-      document.getElementById("timerformat").innerHTML = "<br><br>" + min_display + "<br>" + sec_display;
+      document.getElementById("timer").innerHTML = "TRY TO STAY ON TASK FOR...<br>";
+      document.getElementById("timerformat").innerHTML = min_display + "<br>" + sec_display;
       sec--;
 
       if (hou != 0 && sec !=0)
@@ -121,12 +123,15 @@ function startTimer(minutes)
       	document.getElementById("starter").disabled = true;
         document.getElementById("breaker").disabled = true;
         document.getElementById("lolz").disabled = true;
+        document.getElementById("pomodoro").disabled = true;
+
       }
       else
       {
 	       document.getElementById("starter").disabled = false;
          document.getElementById("breaker").disabled = false;
          document.getElementById("lolz").disabled = false;
+         document.getElementById("pomodoro").disabled = false;
       }
     }
   },intervaltimer);
@@ -151,6 +156,10 @@ function restartTimer()
   location.reload();
 }
 
+function pomodoro()
+{
+  startTimer("25");
+}
 function breakTimer()
 {
   document.getElementById("timerformat").style.fontSize = "250%";
@@ -161,6 +170,7 @@ function breakTimer()
   var hou = 7;
   var sec = 59;
   var intervaltimer = 1000;
+  var alarm = new Audio("alarm.mp3");
 
   interval1 = setInterval(function()
     {
@@ -177,10 +187,11 @@ function breakTimer()
         }
           //output after timer is done
         document.getElementById("timer").innerHTML = "YOUR SHORT BREAK IS OVER.<br>"
-        document.getElementById("timerformat").innerHTML = "<br><br>START ANOTHER FOCUS SESSION BY RESTARTING THE TIMER.";
+        document.getElementById("timerformat").innerHTML = "START ANOTHER FOCUS SESSION BY RESTARTING THE TIMER.";
         document.getElementById("timer").style.fontSize = "65%";
         document.getElementById("timerformat").style.top = "43%";
         document.getElementById("timerformat").style.fontSize = "200%";
+        playAudio(alarm);
         clearInterval(interval1);
       }
       else
@@ -242,7 +253,7 @@ function breakTimer()
 
         // output/ countdown on screen
         document.getElementById("timer").innerHTML = "SHORT BREAK<br>";
-        document.getElementById("timerformat").innerHTML = "<br><br>" + min_display + "<br>" + sec_display;
+        document.getElementById("timerformat").innerHTML = min_display + "<br>" + sec_display;
         sec--;
 
         if (hou != 0 && sec !=0)
@@ -250,13 +261,21 @@ function breakTimer()
         	document.getElementById("starter").disabled = true;
           document.getElementById("breaker").disabled = true;
           document.getElementById("lolz").disabled = true;
+          document.getElementById("pomodoro").disabled = true;
         }
         else
         {
   	       document.getElementById("starter").disabled = false;
            document.getElementById("breaker").disabled = false;
            document.getElementById("lolz").disabled = false;
+           document.getElementById("pomodoro").disabled = false;
         }
       }
     },intervaltimer);
+}
+
+function playAudio(audio)
+{
+  audio.play();
+  setTimeout(function(){ audio.pause() }, 5000);
 }

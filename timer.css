@@ -1,13 +1,13 @@
 #timerstyle
 {
-  font-size: 300%;
+  font-size: 450%;
   font-family: monospace;
 }
 #background
 {
   background: rgb(78,101, 178);
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   border-radius: 100%;
   padding: 27%;
   margin: 0 auto;
