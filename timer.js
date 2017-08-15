@@ -123,7 +123,7 @@ function startTimer(minutes)
       	document.getElementById("starter").disabled = true;
         document.getElementById("breaker").disabled = true;
         document.getElementById("lolz").disabled = true;
-        document.getElementById("komodoro").disabled = true;
+        document.getElementById("pomodoro").disabled = true;
 
       }
       else
@@ -131,7 +131,7 @@ function startTimer(minutes)
 	       document.getElementById("starter").disabled = false;
          document.getElementById("breaker").disabled = false;
          document.getElementById("lolz").disabled = false;
-         document.getElementById("komodoro").disabled = false;
+         document.getElementById("pomodoro").disabled = false;
       }
     }
   },intervaltimer);
@@ -156,7 +156,7 @@ function restartTimer()
   location.reload();
 }
 
-function komodoro()
+function pomodoro()
 {
   startTimer("25");
 }
@@ -261,14 +261,14 @@ function breakTimer()
         	document.getElementById("starter").disabled = true;
           document.getElementById("breaker").disabled = true;
           document.getElementById("lolz").disabled = true;
-          document.getElementById("komodoro").disabled = true;
+          document.getElementById("pomodoro").disabled = true;
         }
         else
         {
   	       document.getElementById("starter").disabled = false;
            document.getElementById("breaker").disabled = false;
            document.getElementById("lolz").disabled = false;
-           document.getElementById("komodoro").disabled = false;
+           document.getElementById("pomodoro").disabled = false;
         }
       }
     },intervaltimer);
