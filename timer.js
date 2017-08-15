@@ -163,6 +163,7 @@ function breakTimer()
   var hou = 7;
   var sec = 59;
   var intervaltimer = 1000;
+  var alarm = new Audio("alarm.mp3");
 
   interval1 = setInterval(function()
     {
@@ -183,6 +184,7 @@ function breakTimer()
         document.getElementById("timer").style.fontSize = "65%";
         document.getElementById("timerformat").style.top = "43%";
         document.getElementById("timerformat").style.fontSize = "200%";
+        playAudio(alarm);
         clearInterval(interval1);
       }
       else
