@@ -93,15 +93,15 @@ function startTimer(minutes)
         // if statement for declaration of variable for
       if (hou == 0)
       {
-        var min_display = " ";
+        var min_display = "";
       }
       else if (hou == 1)
       {
-        var min_display = hou + " MINUTE";
+        var min_display = hou + " MINUTE <br>";
       }
       else
       {
-        var min_display = hou + " MINUTES";
+        var min_display = hou + " MINUTES <br>";
       }
       //variable to hold display for seconds
       if (sec ==1)
@@ -115,7 +115,7 @@ function startTimer(minutes)
 
       // output/ countdown on screen
       document.getElementById("timer").innerHTML = "TRY TO STAY ON TASK FOR...<br>";
-      document.getElementById("timerformat").innerHTML = min_display + "<br>" + sec_display;
+      document.getElementById("timerformat").innerHTML = min_display + sec_display;
       sec--;
 
       if (hou != 0 && sec !=0)
@@ -235,11 +235,11 @@ function breakTimer()
         }
         else if (hou == 1)
         {
-          var min_display = hou + " MINUTE";
+          var min_display = hou + " MINUTE <br>";
         }
         else
         {
-          var min_display = hou + " MINUTES";
+          var min_display = hou + " MINUTES <br>";
         }
         //variable to hold display for seconds
         if (sec ==1)
@@ -253,7 +253,7 @@ function breakTimer()
 
         // output/ countdown on screen
         document.getElementById("timer").innerHTML = "SHORT BREAK<br>";
-        document.getElementById("timerformat").innerHTML = min_display + "<br>" + sec_display;
+        document.getElementById("timerformat").innerHTML = min_display + sec_display;
         sec--;
 
         if (hou != 0 && sec !=0)
