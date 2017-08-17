@@ -118,20 +118,19 @@ function startTimer(minutes)
       document.getElementById("timerformat").innerHTML = min_display + sec_display;
       sec--;
 
-      if (hou != 0 && sec !=0)
+      if (hou == 0 && sec ==0)
       {
-      	document.getElementById("starter").disabled = true;
-        document.getElementById("breaker").disabled = true;
-        document.getElementById("lolz").disabled = true;
-        document.getElementById("pomodoro").disabled = true;
-
+        document.getElementById("starter").disabled = false;
+        document.getElementById("breaker").disabled = false;
+        document.getElementById("lolz").disabled = false;
+        document.getElementById("pomodoro").disabled = false;
       }
       else
       {
-	       document.getElementById("starter").disabled = false;
-         document.getElementById("breaker").disabled = false;
-         document.getElementById("lolz").disabled = false;
-         document.getElementById("pomodoro").disabled = false;
+        document.getElementById("starter").disabled = true;
+        document.getElementById("breaker").disabled = true;
+        document.getElementById("lolz").disabled = true;
+        document.getElementById("pomodoro").disabled = true;
       }
     }
   },intervaltimer);
@@ -256,19 +255,19 @@ function breakTimer()
         document.getElementById("timerformat").innerHTML = min_display + sec_display;
         sec--;
 
-        if (hou != 0 && sec !=0)
+        if (hou == 0 && sec ==0)
         {
-        	document.getElementById("starter").disabled = true;
-          document.getElementById("breaker").disabled = true;
-          document.getElementById("lolz").disabled = true;
-          document.getElementById("pomodoro").disabled = true;
+          document.getElementById("starter").disabled = false;
+          document.getElementById("breaker").disabled = false;
+          document.getElementById("lolz").disabled = false;
+          document.getElementById("pomodoro").disabled = false;
         }
         else
         {
-  	       document.getElementById("starter").disabled = false;
-           document.getElementById("breaker").disabled = false;
-           document.getElementById("lolz").disabled = false;
-           document.getElementById("pomodoro").disabled = false;
+          document.getElementById("starter").disabled = true;
+          document.getElementById("breaker").disabled = true;
+          document.getElementById("lolz").disabled = true;
+          document.getElementById("pomodoro").disabled = true;
         }
       }
     },intervaltimer);
